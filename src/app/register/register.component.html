@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <h1 class="title">Sign Up</h1>
+    <div class="mb-3">
+        <form  class="" [formGroup]="registerForm" autocomplete="off">
+            <input 
+                formControlName="email"
+                class="form-control mb-4" 
+                type="text" 
+                placeholder="Email">
+            <input 
+                formControlName="username"
+                class="form-control mb-4" 
+                type="text" 
+                placeholder="Username">
+            <input              
+                formControlName="passwordHash"             
+                class="form-control mb-4" 
+                type="password" 
+                placeholder="Password">
+            <input
+                formControlName="confirmPassword"             
+                class="form-control mb-4" 
+                type="password" 
+                placeholder="Confirm Password">
+            <button (click)="registerNewUser()" class="btn btn-outline-success me-4" type="submit" >Register</button>
+            <button class="btn btn-outline-danger"  >Cancel</button>
+          </form>
+      
+    </div>
+</div>
