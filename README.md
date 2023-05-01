@@ -1,7 +1,6 @@
 # ScheduleApp
 
-This project demonstrates  the use of [my API][1] 
-[1]: https://github.com/the-heclop/Google-Schedule-Auth-API "Title"
+This project demonstrates  the use of https://github.com/the-heclop/Google-Schedule-Auth-API
 
 * Register a new user with BCrypt password hash
 * Store a JWT to use my API with Authorization
