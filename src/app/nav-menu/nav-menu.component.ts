@@ -5,8 +5,6 @@ import { Observable, of } from 'rxjs';
 import { User } from '../_models/user';
 
 
-
-
 @Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
@@ -26,6 +24,7 @@ export class NavMenuComponent implements OnInit {
 
 
   login() {
+      
       this.accountService.login(this.loginForm.value).subscribe({
         next: response => {
           console.log(response);
@@ -38,6 +37,8 @@ export class NavMenuComponent implements OnInit {
       this.accountService.logout();
       this.loginForm.reset();
     }
+
+    
 
   }
 

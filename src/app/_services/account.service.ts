@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { User } from '../_models/user';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,10 +11,16 @@ export class AccountService {
   baseUrl = 'https://localhost:7226/';
   private currentUserSource = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSource.asObservable();
+  private user = {
+    username: '',
+    token: ''
+  }
 
   constructor(private http: HttpClient) { }
 
+  
   registerNewUser(registerForm: any) {
+    
     return this.http.post(this.baseUrl + 'account/register', registerForm).pipe(
       map((user: any) => {
         if (user) {
@@ -45,7 +52,24 @@ export class AccountService {
     this.currentUserSource.next(null);
   }
 
+  getUser() {
+    const user = localStorage.getItem('user');
+    if (user) {
+      this.user = JSON.parse(user);
+    }
+    return this.user;
+  }
+
   getAvailableTimes() {
-    return this.http.get(this.baseUrl + 'available-hour-blocks');
+    const user = this.getUser();
+    const token = user.token;
+    const headers = { 'Authorization': `Bearer ${token}` };
+    console.log("BWAHAHAHA");
+    
+    return this.http.get(this.baseUrl + 'available-hour-blocks', {headers});
+}
+
+  scheduleEvent(eventForm: any) {
+    return this.http.post(this.baseUrl + 'schedule', eventForm);
   }
 }

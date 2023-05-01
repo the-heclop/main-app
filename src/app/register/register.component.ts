@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ registerForm = new FormGroup({
   confirmPassword: new FormControl('')
 });
 
-constructor(public accountService: AccountService) { }
+
+constructor(public accountService: AccountService, private router: Router) { }
 
 ngOnInit(): void {
   
@@ -29,7 +31,9 @@ registerNewUser() {
   }
   )}
 
-  returnHome() {
-    
-  }
+
+cancelRegister() {
+  this.registerForm.reset();
+}
+
 }

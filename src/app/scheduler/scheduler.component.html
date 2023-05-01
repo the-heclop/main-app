@@ -1,0 +1,105 @@
+<!-- <div *ngIf="accountService.currentUser$ | async" class="calendar row" >
+    <table class="col">
+        <thead>
+            <tr>
+                <th >Monday</th>
+            </tr>
+        </thead>
+        <tbody>
+          <div *ngFor="let time of times">
+            <tr *ngIf="isMonday(time.start)">             
+               <td>
+                <input type="checkbox" (change)="onCheckboxChange($event, time)">
+                {{isMonday(time.start)}} 
+              </td>                          
+            </tr> 
+          </div>                          
+        </tbody>
+    </table>
+    <table class="col">
+      <thead>
+          <tr>
+              <th>Tuesday</th>
+          </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let time of times" >
+          <tr *ngIf="isTuesday(time.start)">          
+            <td >
+              <input type="checkbox"  (change)=" onCheckboxChange($event, time)">
+               {{isTuesday(time.start)}} 
+              </td>
+          </tr>
+          </ng-container>                           
+      </tbody>
+  </table>
+  <table class="col">
+    <thead>
+        <tr>
+            <th>Wednesday</th>
+        </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let time of times">
+        <tr *ngIf="isWednesday(time.start)">          
+          <td>
+            <input type="checkbox">
+             {{isWednesday(time.start)}} 
+            </td>
+        </tr>
+        </ng-container>                           
+    </tbody>
+  </table>
+  <table class="col">
+    <thead>
+        <tr>
+            <th>Thursday</th>
+        </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let time of times">
+        <tr *ngIf="isThursday(time.start)">          
+          <td>
+            <input type="checkbox">
+             {{isThursday(time.start)}} 
+            </td>
+        </tr>
+        </ng-container>                            
+    </tbody>
+  </table>
+  <table class="col">
+    <thead>
+        <tr>
+            <th>Friday</th>
+        </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let time of times"  >
+        <tr *ngIf="isFriday(time.start)">          
+          <td> {{isFriday(time.start)}}</td>
+        </tr>
+      </ng-container>                          
+    </tbody>
+  </table>
+</div> -->
+
+
+<div class=" container " *ngIf="accountService.currentUser$ | async" class="calendar row" >
+  <form class="row justify-content-center"  [formGroup]="eventForm">
+    <div class=" w-25">
+      <label>Select an appointment</label>
+      <select formControlName="start" class="form-select" >
+        <option type="date"  *ngFor="let time of times" [value]="time.start" >
+          {{time.start | date: 'MMMM d, y, h:mm a'}}
+        </option>
+      </select>
+      <label class="" for="reason">Reason:</label>
+      <input class="form-control" type="text" formControlName="reason" />
+      <label class="" for="description">Description:</label>
+      <textarea class="form-control" type="text" formControlName="description"></textarea> 
+      <button type="submit" class="btn btn-lg btn-info" (click)="scheduleEvent()">Submit</button>
+    </div>
+  </form>
+</div>
+  
+  
