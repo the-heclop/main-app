@@ -14,6 +14,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
+import { DataDashboardComponent } from './data-dashboard/data-dashboard.component';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+
+
+
+
 
 
 @NgModule({
@@ -23,6 +32,8 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
     HomeComponent,
     RegisterComponent,
     SchedulerComponent,
+    DataDashboardComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +45,11 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
       { path: '', component: AppComponent, pathMatch: 'full' },
     ]),
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

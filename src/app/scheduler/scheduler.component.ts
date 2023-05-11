@@ -33,7 +33,7 @@ ngOnInit(): void {
 getAvailableTimes() {
   this.accountService.getAvailableTimes().subscribe({
     next: (response: any) => {
-      this.times = response;      
+      this.times = response;
     }
   });
 }
@@ -44,11 +44,12 @@ scheduleEvent() {
     next: (response: any) => {
       console.log(response);
       console.log(this.eventForm.value);
+      alert('Event Scheduled');
       this.router.navigate(['/home']);
-    }    
-    
+    }
+
   });
-  
+
 }
 
 }

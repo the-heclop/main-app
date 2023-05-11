@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
     <div class="container">
-      <a routerLink="/" class="navbar-brand" href="#">Software Guy</a>  
+      <a routerLink="/" class="navbar-brand" href="#">Software Guy</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
           <li class="nav-item">
             <a class="nav-link" routerLink="/scheduler" routerLinkActive="active">Availability</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="" routerLinkActive="active">About</a>
+            <a class="nav-link" routerLink="/data" routerLinkActive="active">Data Dashboard</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="" routerLinkActive="active">Message</a>
-          </li>
+          </li> -->
         </ul>
-  
-  
+
+
         <div class="dropdown" *ngIf="accountService.currentUser$ | async as currentUser" dropdown >
           <a class="dropdown-toggle text-light " dropdownToggle >Welcome {{currentUser.username}}</a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
@@ -21,18 +21,18 @@
             <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </div>
-  
-  
+
+
         <form *ngIf="!(accountService.currentUser$ | async)" class="d-flex" [formGroup]="loginForm" (ngSubmit)="login()"  autocomplete="off">
-          <input 
+          <input
               formControlName="username"
-              class="form-control me-2" 
-              type="text" 
+              class="form-control me-2"
+              type="text"
               placeholder="Username">
-          <input              
-              formControlName="password"             
-              class="form-control me-2" 
-              type="password" 
+          <input
+              formControlName="password"
+              class="form-control me-2"
+              type="password"
               placeholder="Password">
           <button class="btn btn-outline-success" type="submit" >Login</button>
         </form>

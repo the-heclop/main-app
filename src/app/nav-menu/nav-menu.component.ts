@@ -14,7 +14,7 @@ export class NavMenuComponent implements OnInit {
   loginForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
-  });  
+  });
   currentUser$: Observable<User | null> = of(null);
 
   constructor(public accountService: AccountService ) { }
@@ -24,12 +24,12 @@ export class NavMenuComponent implements OnInit {
 
 
   login() {
-      
+
       this.accountService.login(this.loginForm.value).subscribe({
         next: response => {
           console.log(response);
         },
-        error: error => alert('Invalid login')        
+        error: error => alert('Invalid login')
       })
     }
 
@@ -38,11 +38,11 @@ export class NavMenuComponent implements OnInit {
       this.loginForm.reset();
     }
 
-    
+
 
   }
 
-  
+
 
 
 

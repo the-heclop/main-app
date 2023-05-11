@@ -18,9 +18,9 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  
+
   registerNewUser(registerForm: any) {
-    
+
     return this.http.post(this.baseUrl + 'account/register', registerForm).pipe(
       map((user: any) => {
         if (user) {
@@ -64,8 +64,6 @@ export class AccountService {
     const user = this.getUser();
     const token = user.token;
     const headers = { 'Authorization': `Bearer ${token}` };
-    console.log("BWAHAHAHA");
-    
     return this.http.get(this.baseUrl + 'available-hour-blocks', {headers});
 }
 

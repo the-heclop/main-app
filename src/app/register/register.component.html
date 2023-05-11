@@ -1,6 +1,6 @@
-<div *ngIf="!(accountService.currentUser$ | async)" class="container row justify-content-center ">
+<div *ngIf="!(accountService.currentUser$ | async)" class="container justify-content-center ">
     <h1 class="title row justify-content-center">Sign Up</h1>
-    <div class="w-25 mb-3 ">
+    <div class="w-30 mb-3 ">
         <form  class="" [formGroup]="registerForm" autocomplete="off">
             <input 
                 formControlName="email"
@@ -24,7 +24,6 @@
                 placeholder="Confirm Password">
             <button routerLink="/register" (click)="registerNewUser()" class="btn btn-outline-success me-5" type="submit" >Register</button>
             <button routerLink="/" class="btn btn-outline-danger" (click)="cancelRegister()"> Cancel </button>
-          </form>
-      
+          </form>      
     </div>
 </div>
