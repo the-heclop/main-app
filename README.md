@@ -1,6 +1,6 @@
 # Landing Page
 
-This project demonstrates  the use of API - [https://tinyurl.com/39c4rws4](https://github.com/the-heclop/Schedule-App-API)
+This project demonstrates  the use of API - [C# - API](https://github.com/the-heclop/Schedule-App-API)
 
 * Register a new user with BCrypt password hash
 * Store a JWT to use my API with Authorization
