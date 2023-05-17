@@ -19,7 +19,7 @@ This project demonstrates  the use of API - [C# - API](https://github.com/the-he
 
 * User able to log in and maintian state
 * Be able to choose from avialable time blocks to schedule an event
-* registered password with be Bcrypted
+* registered password with be Bcrypt hash
 * logic will be completed on backend with C# API
 * JWT will last for 24 hours
 * Prompt when  event is scheduled
