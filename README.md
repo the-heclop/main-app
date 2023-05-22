@@ -1,9 +1,28 @@
-# ScheduleApp
+# Landing Page
 
-This project demonstrates  the use of API - https://github.com/the-heclop/Google-Schedule-Auth-API
+http://heclop.net
 
-* Register a new user with BCrypt password hash
-* Store a JWT to use my API with Authorization
-* Keep user state and obserse changes
-* Schedule link will display option dropdown to pick a time based on get call from my API
-* Post to my API when form is filled and submitted and will schedule it  on my Google Calendar
+This project demonstrates  the use of API - [C# - API](https://github.com/the-heclop/Schedule-App-API)
+
+# Given Requirements
+* [x] Create registration and login POST to database
+* [x] Maintain user state
+* [x] User state for features to be shown to logged in user
+* [x] store token when user registers or logs in
+* [x] delete token when user logs out
+* [ ] 404 error page
+* [ ] package details page when clicked
+* [x] functional form POST to schedule Google API call to schedule event
+
+
+# Features
+
+* User able to log in and maintian state
+* Be able to choose from avialable time blocks to schedule an event
+* registered password with be Bcrypt hash
+* logic will be completed on backend with C# API
+* JWT will last for 24 hours
+* Prompt when  event is scheduled
+
+
+
