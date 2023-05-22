@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl = "https://localhost:7226/api/queries";
+  baseUrl = "https://landingpageang.azurewebsites.net/api/queries";
 
   constructor(private http: HttpClient) { }
 

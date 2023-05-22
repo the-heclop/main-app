@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataService } from '../_services/data.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
+import { ElementTrackerService } from '../_services/elementTracker.service';
 
 
 
@@ -28,7 +29,7 @@ export class DataDashboardComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private dataLookUp: DataService, public accountService: AccountService) {
+  constructor(private router: Router, private dataLookUp: DataService, public accountService: AccountService, public tracker: ElementTrackerService) {
    }
 
   ngOnInit(): void {

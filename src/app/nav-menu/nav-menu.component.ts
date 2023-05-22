@@ -27,7 +27,7 @@ export class NavMenuComponent implements OnInit {
 
       this.accountService.login(this.loginForm.value).subscribe({
         next: response => {
-          console.log(response);
+          
         },
         error: error => alert('Invalid login')
       })

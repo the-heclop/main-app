@@ -14,7 +14,15 @@
   <h1>Dashboard</h1>
   <div  class="search-container">
     <label class="search-box-label" for="search">Search</label>
-    <textarea  [(ngModel)]="trackIds" type="text" class="search-box" name="search" placeholder="tracking id"></textarea>
+    <textarea id="package-search"
+     [(ngModel)]="trackIds"
+      type="text"
+      class="search-box"
+      name="search"
+      placeholder="tracking id"
+      (mouseover)="tracker.startTracking('package-search')"
+      (mouseout)="tracker.stopTracking('package-search', 'mouseover')"
+      ></textarea>
   </div>
   <button (click)="getData()" type="submit" id="search-id" class="btn btn-primary">Submit</button>
 
