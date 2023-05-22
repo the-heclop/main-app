@@ -13,7 +13,7 @@ This project demonstrates  the use of API - [C# - API](https://github.com/the-he
 * [ ] 404 error page
 * [ ] package details page when clicked
 * [x] functional form POST to schedule Google API call to schedule event
-
+* [x] Added new feature to track user mouse over activity
 
 # Features
 
