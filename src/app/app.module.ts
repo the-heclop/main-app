@@ -19,6 +19,7 @@ import { DataDashboardComponent } from './data-dashboard/data-dashboard.componen
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { DataDetailsComponent } from './data-details/data-details.component';
 
 
 
@@ -33,6 +34,7 @@ import { MatOptionModule } from '@angular/material/core';
     RegisterComponent,
     SchedulerComponent,
     DataDashboardComponent,
+    DataDetailsComponent,
 
   ],
   imports: [

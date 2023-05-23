@@ -15,7 +15,7 @@ import { ElementTrackerService } from '../_services/elementTracker.service';
   styleUrls: ['./data-dashboard.component.css']
 })
 export class DataDashboardComponent implements OnInit {
-  accountData: any;
+  accountData: any[] = [];
   trackIds = '';
   isHeaderHidden = false;
   tableHeaders = [
@@ -25,9 +25,6 @@ export class DataDashboardComponent implements OnInit {
    {name: 'destination'},
    {name: 'scan_time'},
   ];
-
-
-
 
   constructor(private router: Router, private dataLookUp: DataService, public accountService: AccountService, public tracker: ElementTrackerService) {
    }
@@ -39,8 +36,8 @@ export class DataDashboardComponent implements OnInit {
   getData() {
     let idArray = this.trackIds.split('\n');
     this.dataLookUp.getData(idArray).subscribe(response => {
-      this.accountData = response;
-      console.log(this.trackIds);
+      this.accountData = response
+      this.dataLookUp.packageIdArray(this.accountData);
     });
   }
 

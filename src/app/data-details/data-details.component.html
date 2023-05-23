@@ -1,0 +1,10 @@
+<p class="package-details">data-details works!</p>
+<div *ngIf="packageArray">
+  <p>Tracking ID: {{packageArray.tracking_id}}</p>
+  <p>Order Number: {{packageArray.order_number}}</p>
+  <p>Destination: {{packageArray.destination}}</p>
+  <p>Last Scan Location: {{packageArray.last_scan_location}}</p>
+  <p>Scan Time: {{packageArray.scan_time}}</p>
+</div>
+<button (click)="goBack()">Back</button>
+

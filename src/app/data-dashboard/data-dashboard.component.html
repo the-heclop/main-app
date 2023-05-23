@@ -39,7 +39,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let data of accountData">
-          <td><a href="">{{data.tracking_id}}</a></td>
+          <td><a [routerLink]="['/data', data.tracking_id]">{{data.tracking_id}}</a></td>
           <td>{{data.last_scan_location}}</td>
           <td>{{data.order_number}}</td>
           <td>{{data.destination}}</td>
