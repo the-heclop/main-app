@@ -6,6 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
+  // baseUrl = "https://landingpageang.azurewebsites.net/api/queries";
   baseUrl = "https://localhost:7226/api/queries";
 
 

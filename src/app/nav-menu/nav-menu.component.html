@@ -8,33 +8,32 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/data" routerLinkActive="active">Data Dashboard</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" routerLink="" routerLinkActive="active">Message</a>
-          </li> -->
         </ul>
 
-
-        <div class="dropdown" *ngIf="accountService.currentUser$ | async as currentUser" dropdown >
-          <a class="dropdown-toggle text-light " dropdownToggle >Welcome {{currentUser.username}}</a>
-          <div class="dropdown-menu mt-3" *dropdownMenu>
-            <a class="dropdown-item">Edit Profile</a>
-            <a class="dropdown-item" (click)="logout()">Logout</a>
+        <div>
+          <div *ngIf="isLoading" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+          <div class="dropdown" *ngIf="accountService.currentUser$ | async as currentUser" dropdown >
+            <a class="dropdown-toggle text-light " dropdownToggle >Welcome {{currentUser.username}}</a>
+            <div class="dropdown-menu mt-3" *dropdownMenu>
+              <a class="dropdown-item">Edit Profile</a>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
           </div>
+
+
+          <form *ngIf="!isLoading && !(accountService.currentUser$ | async)" class="d-flex" [formGroup]="loginForm" (ngSubmit)="login()"  autocomplete="off">
+            <input
+                formControlName="username"
+                class="form-control me-2"
+                type="text"
+                placeholder="Username">
+            <input
+                formControlName="password"
+                class="form-control me-2"
+                type="password"
+                placeholder="Password">
+            <button class="btn btn-outline-success" type="submit" >Login</button>
+          </form>
         </div>
-
-
-        <form *ngIf="!(accountService.currentUser$ | async)" class="d-flex" [formGroup]="loginForm" (ngSubmit)="login()"  autocomplete="off">
-          <input
-              formControlName="username"
-              class="form-control me-2"
-              type="text"
-              placeholder="Username">
-          <input
-              formControlName="password"
-              class="form-control me-2"
-              type="password"
-              placeholder="Password">
-          <button class="btn btn-outline-success" type="submit" >Login</button>
-        </form>
       </div>
   </nav>
